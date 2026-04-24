@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab: ทำความเข้าใจ CSS พื้นฐาน</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* ===================================================
+           Lab 8.1: ทฤษฎีกล่อง (Box Model) - Margin, Padding, Border
+           =================================================== */
+        .box-styled {
+            padding: 30px;
+            /* ดันข้อความข้างในให้ออกห่างจากเส้นขอบ */
+            border: 5px solid red;
+            /* สร้างเส้นขอบสีแดง หนา 5px */
+            margin: 20px;
+            /* ผลักกล่องใบอื่นที่อยู่ข้างนอกให้ออกไปห่างๆ */
+            background-color: #f8d7da;
+            /* สีพื้นหลัง */
+        }
+
+        /* ===================================================
+           Lab 8.2: การจัดรูปแบบตัวอักษร (Typography) - ปรับตามโลโก้เสริมสุข
+           =================================================== */
+        .text-styled {
+            font-family: 'Sarabun', 'Tahoma', sans-serif;
+            /* ใช้ฟอนต์ที่ดูเป็นทางการขึ้น */
+            font-size: 28px;
+            /* ใช้สีน้ำเงินที่เป็นเอกลักษณ์ของเสริมสุข */
+            color: #005691;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            text-decoration: none;
+            /* เอาเส้นใต้เพิ่มความทันสมัย */
+
+            /* เพิ่มเส้นขอบล่างสีแดงเพื่อให้ครบสีของโลโก้ */
+            border-bottom: 4px solid #9dbd0d;
+            display: inline-block;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        /* ===================================================
+           Lab 8.3: เงา และ ความโค้งมน (Shadows & Radius)
+           =================================================== */
+        .shape-styled {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            /* ลบมุมให้โค้งมน (ตัวเลขยิ่งเยอะยิ่งกลม) */
+            /* box-shadow: แกนX แกนY ความเบลอ ความหนา สีของเงา */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===================================================
+           Lab 8.4: ลูกเล่นเมื่อนำเมาส์ชี้ (Hover Effects)
+           =================================================== */
+        .button-styled {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            /* เปลี่ยนเมาส์เป็นรูปนิ้วชี้ */
+            transition: 0.3s;
+            /* แอนิเมชันเวลาเปลี่ยนรูปร่าง (ใช้เวลา 0.3 วินาที) */
+        }
+
+        /* :hover คือเหตุการณ์ตอนที่เมาส์มาวางทับ */
+        .button-styled:hover {
+            background-color: #155724;
+            /* สีเข้มขึ้น */
+            transform: scale(1.1);
+            /* ขยายขนาดขึ้น 10% */
+            box-shadow: 0px 5px 15px rgba(40, 167, 69, 0.5);
+            /* มีเงาเรืองแสง */
+        }
+    </style>
+</head>
+
+<body class="p-4" style="background-color: #f0f2f5;">
+
+    <h1 class="mb-4 text-primary"> Lab CSS </h1>
+    <hr class="mb-5">
+
+    <h3 class="text-dark"> กล่อง (Box Model) 📦</h3>
+    <p class="text-muted">ความแตกต่างระหว่างไม่มีอะไรเลย กับการใช้ Padding (ขอบใน), Border (เส้นขอบ), และ Margin
+        (ขอบนอก)</p>
+    <div class="row mb-5">
+        <div class="col-md-6 border p-3 bg-white">
+            <h5 class="text-danger">❌ ไม่ใช้ CSS (ดิบๆ)</h5>
+            <div>
+                คำเตือน: ห้ามเข้าใกล้เครื่องจักรขณะทำงาน
+            </div>
+            <div>กล่องใบที่สอง (ติดกันเลย)</div>
+        </div>
+        <div class="col-md-6 border p-3 bg-white">
+            <h5 class="text-success">✅ ใช้ CSS (Box Model)</h5>
+            <div class="box-styled">
+                คำเตือน: ห้ามเข้าใกล้เครื่องจักรขณะทำงาน
+            </div>
+            <div style="background-color: yellow;">กล่องใบที่สอง (ถูก Margin ผลักออกไป)</div>
+        </div>
+    </div>
+
+    <h3 class="text-dark"> การจัดรูปแบบตัวอักษร (Typography) 📝</h3>
+    <p class="text-muted">การเปลี่ยนฟอนต์ ขนาด สี และการจัดกึ่งกลาง</p>
+    <div class="row mb-5">
+        <div class="col-md-6 border p-3 bg-white">
+            <h5 class="text-danger">❌ ไม่ใช้ CSS</h5>
+            <div>บริษัท เสริมสุข จำกัด (มหาชน)</div>
+        </div>
+        <div class="col-md-6 border p-3 bg-white">
+            <h5 class="text-success">✅ ใช้ CSS (Typography)</h5>
+            <div class="text-styled">บริษัท เสริมสุข จำกัด (มหาชน)</div>
+        </div>
+    </div>
+
+    <h3 class="text-dark"> เงาและความโค้งมน (Modern Design) ☁️</h3>
+    <p class="text-muted">เปลี่ยนกล่องสี่เหลี่ยมแข็งๆ ให้ดูเป็นหน้าต่างแอปพลิเคชันยุคใหม่</p>
+    <div class="row mb-5">
+        <div class="col-md-6 border p-5 bg-light">
+            <h5 class="text-danger">❌ ไม่ใช้ CSS</h5>
+            <div style="background-color: white; padding: 40px;">
+                ตารางสรุปผลการผลิต (กล่องแบนๆ ขอบเหลี่ยม)
+            </div>
+        </div>
+        <div class="col-md-6 border p-5 bg-light">
+            <h5 class="text-success">✅ ใช้ CSS (Radius & Shadow)</h5>
+            <div class="shape-styled">
+                ตารางสรุปผลการผลิต (ขอบมนและมีเงาดูลอยขึ้นมา)
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-dark"> ลูกเล่นโต้ตอบกับผู้ใช้งาน (Hover Effects) 🖱️</h3>
+    <p class="text-muted">ลองเอาเมาส์ไปชี้ที่ปุ่มทั้ง 2 ฝั่งเพื่อดูความแตกต่าง</p>
+    <div class="row mb-5">
+        <div class="col-md-6 border p-5 bg-white text-center">
+            <h5 class="text-danger mb-4">❌ ไม่ใช้ CSS (แข็งทื่อ)</h5>
+            <button style="background-color: #28a745; color: white; padding: 15px 30px; border: none;">
+                เริ่มเดินเครื่อง
+            </button>
+        </div>
+        <div class="col-md-6 border p-5 bg-white text-center">
+            <h5 class="text-success mb-4">✅ ใช้ CSS (:hover + transition)</h5>
+            <button class="button-styled">
+                เริ่มเดินเครื่อง
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>

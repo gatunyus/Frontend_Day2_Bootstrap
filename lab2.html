@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Grid Dashboard - Responsive</title>
+    <style>
+        /* รีเซ็ตค่าพื้นฐาน */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            padding: 20px;
+        }
+
+        /* -------------------------------------------
+           1. PARENT GRID (โครงสร้างหลักของ Dashboard - สำหรับจอคอม)
+           ------------------------------------------- */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 70px minmax(500px, auto);
+            grid-template-areas:
+                "sidebar header"
+                "sidebar main";
+            gap: 20px;
+            /* เปลี่ยนจาก height: 90vh เป็น min-height เพื่อให้ยืดหยุ่นตอนเนื้อหาเยอะ */
+            min-height: 90vh;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* -------------------------------------------
+           2. NESTED GRID (ส่วนเนื้อหาหลัก - สำหรับจอคอม)
+           ------------------------------------------- */
+        .main-content {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .table-section,
+        .graph-section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            border: 2px dashed #bdc3c7;
+            text-align: center;
+        }
+
+
+        /* -------------------------------------------
+           3. RESPONSIVE DESIGN (สำหรับจอมือถือและแท็บเล็ต)
+           ------------------------------------------- */
+        @media (max-width: 768px) {
+
+            /* ปรับโครงสร้างหลัก (Parent Grid) ให้เป็นแนวตั้ง 1 คอลัมน์ */
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+                /* บังคับให้เหลือ 1 คอลัมน์เต็มจอ */
+                grid-template-rows: auto auto 1fr;
+                /* ปรับความสูงตามเนื้อหาด้านใน */
+                /* เรียงใหม่: เอา Header ขึ้นก่อน ตามด้วยเมนู และเนื้อหาหลัก */
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main";
+            }
+
+            /* ปรับโครงสร้างย่อย (Nested Grid) ให้เป็นแนวตั้ง 1 คอลัมน์ */
+            .main-content {
+                grid-template-columns: 1fr;
+                /* ให้ตารางและกราฟเรียงซ้อนกันบน-ล่าง */
+            }
+
+            /* ปรับแต่งเมนูเพิ่มเติมสำหรับมือถือ (ไม่บังคับ แต่ทำให้ดูดีขึ้น) */
+            .sidebar {
+                text-align: center;
+            }
+
+            .sidebar p {
+                display: inline-block;
+                margin: 0 10px;
+                /* ให้เมนูเรียงเป็นแนวนอนบนจอเล็ก */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <nav class="sidebar">
+            <h2>เมนูหลัก</h2>
+            <br>
+            <p>📁 ภาพรวม</p>
+            <p>📊 รายงาน</p>
+            <p>⚙️ ตั้งค่า</p>
+        </nav>
+
+        <header class="header">
+            แดชบอร์ดสรุปยอดขายประจำเดือน
+        </header>
+
+        <main class="main-content">
+
+            <div class="table-section">
+                <h3>📋 พื้นที่แสดงตารางข้อมูล<br>(Data Table)</h3>
+            </div>
+
+            <div class="graph-section">
+                <h3>📈 พื้นที่แสดงกราฟ<br>(Chart / Graph)</h3>
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

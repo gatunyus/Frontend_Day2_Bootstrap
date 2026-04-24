@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รวมเทคนิค Bootstrap Grid System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* แต่งเส้นขอบให้กล่องดูชัดเจนขึ้นเวลาสอน */
+        .grid-box {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="p-4 bg-light">
+
+    <h1 class="mb-2 text-primary">Master of Bootstrap Grid</h1>
+    <p class="text-muted mb-4">รวมเทคนิคการจัดหน้าจอด้วยระบบ 12 ช่อง
+        (ลองย่อ/ขยายหน้าต่างเบราว์เซอร์เพื่อดูความเปลี่ยนแปลง)</p>
+
+    <hr class="mb-4">
+
+    <h3 class="text-dark">1. พื้นฐานการแบ่งคอลัมน์ (Basic Grid)</h3>
+    <p>กำหนดตัวเลขความกว้างชัดเจน (รวมกันต้องได้ 12)</p>
+
+    <div class="row text-center text-white mb-3">
+        <div class="col-4 bg-primary p-3 grid-box">col-4</div>
+        <div class="col-4 bg-success p-3 grid-box">col-4</div>
+        <div class="col-4 bg-primary p-3 grid-box">col-4</div>
+    </div>
+
+    <div class="row text-center text-white mb-5">
+        <div class="col-3 bg-danger p-3 grid-box">col-3</div>
+        <div class="col-6 bg-dark p-3 grid-box">col-6</div>
+        <div class="col-3 bg-danger p-3 grid-box">col-3</div>
+    </div>
+
+    <h3 class="text-dark">2. การแบ่งพื้นที่อัตโนมัติ (Auto Layout)</h3>
+    <p>ใช้คำสั่ง <code>col</code> หรือ <code>row-cols-*</code> เพื่อให้ระบบหารพื้นที่ให้เท่ากันเอง</p>
+
+    <div class="row text-center text-dark mb-2">
+        <div class="col bg-success text-white p-2 grid-box">1 of 2 (col)</div>
+        <div class="col bg-warning p-2 grid-box">2 of 2 (col)</div>
+    </div>
+    <div class="row text-center text-dark mb-4">
+        <div class="col bg-success text-white p-2 grid-box">1 of 4 (col)</div>
+        <div class="col bg-warning p-2 grid-box">2 of 4 (col)</div>
+        <div class="col bg-success text-white p-2 grid-box">3 of 4 (col)</div>
+        <div class="col bg-warning p-2 grid-box">4 of 4 (col)</div>
+    </div>
+
+    <h5>แบบบังคับด้วย <code>row-cols-3</code> (แถวละ 3 กล่อง)</h5>
+    <div class="row row-cols-3 text-center mb-5">
+        <div class="col bg-success text-white p-2 grid-box">1 of 6</div>
+        <div class="col bg-warning p-2 grid-box">2 of 6</div>
+        <div class="col bg-success text-white p-2 grid-box">3 of 6</div>
+        <div class="col bg-warning p-2 grid-box">4 of 6</div>
+        <div class="col bg-success text-white p-2 grid-box">5 of 6</div>
+        <div class="col bg-warning p-2 grid-box">6 of 6</div>
+    </div>
+
+    <h3 class="text-dark">3. ความสูงเท่ากันอัตโนมัติ (Equal Height)</h3>
+    <p>หากกล่องใดกล่องหนึ่งมีเนื้อหาเยอะ กล่องอื่นในแถวเดียวกันจะยืดความสูงตามอัตโนมัติ</p>
+
+    <div class="row text-white mb-5">
+        <div class="col-4 bg-success p-3 grid-box">
+            Lorem ipsum dolor sit amet, cibo sensibus interesset no sit. Et dolor
+            possim volutpat qui. No malis tollit
+            iriure eam, et vel tale zril blandit, rebum vidisse nostrum qui eu.
+            No nostrud dolorem legendos mea.
+        </div>
+        <div class="col-4 bg-warning text-dark p-3 grid-box d-flex 
+        align-items-center justify-content-center">
+            col-4(ยืดตาม)
+        </div>
+        <div class="col-4 bg-success p-3 grid-box d-flex align-items-center  
+           justify-content-center">col-4 (ยืดตาม)</div>
+    </div>
+    <h3 class="text-dark">4. ปรับตามขนาดหน้าจอ (Responsive Breakpoints)</h3>
+    <p class="text-danger">
+        <b>* ลองย่อหน้าต่างให้แคบสุด (มือถือ) -> ขยายกลางๆ (แท็บเล็ต) -> ขยายสุด (คอมพิวเตอร์) *</b>
+    </p>
+
+    <div class="row text-center text-white mb-5">
+
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <div class="bg-primary p-4 grid-box rounded shadow-sm">
+                <h4>กล่องที่ 1</h4>
+                <p class="mb-0 small">ย่อหน้าจอเพื่อดูการเปลี่ยนแปลง</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <div class="bg-success p-4 grid-box rounded shadow-sm">
+                <h4>กล่องที่ 2</h4>
+                <p class="mb-0 small">ย่อหน้าจอเพื่อดูการเปลี่ยนแปลง</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <div class="bg-danger p-4 grid-box rounded shadow-sm">
+                <h4>กล่องที่ 3</h4>
+                <p class="mb-0 small">ย่อหน้าจอเพื่อดูการเปลี่ยนแปลง</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3 mb-3">
+            <div class="bg-dark p-4 grid-box rounded shadow-sm">
+                <h4>กล่องที่ 4</h4>
+                <p class="mb-0 small">ย่อหน้าจอเพื่อดูการเปลี่ยนแปลง</p>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="text-dark">5. การซ้อนตาราง (Nested Grids)</h3>
+    <p>การสร้าง <code>row</code> ใหม่เข้าไปใน <code>col</code> เดิม เพื่อแบ่งพื้นที่ย่อยลงไปอีก</p>
+
+    <div class="row text-center mb-5">
+        <div class="col-8 grid-box" style="background-color: #f7c04a; 
+        padding: 20px;">
+            <p class="mb-3 text-dark fw-bold">col-8 (พื้นที่หลักฝั่งซ้าย)</p>
+
+            <div class="row">
+                <div class="col-6 bg-white grid-box" style="padding: 30px;">
+                    ซ้อน col-6
+                </div>
+                <div class="col-6 grid-box" style="background-color: #717780; 
+                    color: #fff; padding: 30px;">
+                    ซ้อน col-6
+                </div>
+            </div>
+        </div>
+        <div class="col-4 grid-box d-flex align-items-center 
+        justify-content-center" style="background-color: #4a8d5e; color: #fff; padding: 20px;">
+            <p class="fw-bold mb-0">col-4 (พื้นที่ขวา)</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

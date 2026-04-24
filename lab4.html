@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab: Bootstrap Cards (Master)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f6f9;
+        }
+    </style>
+</head>
+
+<body class="p-4">
+
+    <h1 class="mb-2 text-primary">🗂️ Bootstrap Cards</h1>
+    <p class="text-muted mb-4">รวมเทคนิคการสร้างกล่องข้อมูลตั้งแต่ระดับพื้นฐานจนถึงเทคนิคขั้นสูง</p>
+    <hr class="mb-4">
+
+    <h4 class="text-dark mb-3">1. การจัดตำแหน่งข้อความ (ซ้าย, กลาง, ขวา)</h4>
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card mb-3 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">ประกาศชิดซ้าย (Default)</h5>
+                    <p class="card-text">แจ้งพนักงานเรื่องการเบิกอุปกรณ์เซฟตี้</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center mb-3 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">ประกาศกึ่งกลาง (Center)</h5>
+                    <p class="card-text">แจ้งพนักงานเรื่องการเบิกอุปกรณ์เซฟตี้</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-end mb-3 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">ประกาศชิดขวา (End)</h5>
+                    <p class="card-text">แจ้งพนักงานเรื่องการเบิกอุปกรณ์เซฟตี้</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-dark mb-3">2. การใส่สีตามสถานะ (Backgrounds & Borders)</h4>
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card text-bg-success mb-3 shadow-sm">
+                <div class="card-header border-white">M-01</div>
+                <div class="card-body">
+                    <h5 class="card-title">🟢 ทำงานปกติ</h5>
+                    <p class="card-text">ยอดผลิต 1,500 ขวด/ชม.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-bg-danger mb-3 shadow-sm">
+                <div class="card-header border-white">M-02</div>
+                <div class="card-body">
+                    <h5 class="card-title">🔴 เครื่องขัดข้อง</h5>
+                    <p class="card-text">รอทีมช่างเข้าตรวจสอบ</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-warning mb-3 shadow-sm">
+                <div class="card-header bg-transparent border-warning text-
+                warning fw-bold">
+                    M-03
+                </div>
+                <div class="card-body text-warning">
+                    <h5 class="card-title">🟡 รอตรวจสอบ</h5>
+                    <p class="card-text">รอ QC สุ่มตรวจชิ้นงาน</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-dark mb-3">3. แดชบอร์ดแบบตาราง (เรียง 3 กล่อง ความสูงเท่ากัน)</h4>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="https://dummyimage.com/300x100/0052cc/fff&text=LINE+A" class="card-img-top" alt="Machine A">
+                <div class="card-body">
+                    <h5 class="card-title">สายการผลิต A</h5>
+                    <p class="card-text">ข้อมูลสรุปการทำงานของสายการผลิต A</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">อัปเดต: 3 นาทีที่แล้ว</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="https://dummyimage.com/300x100/00875a/fff&text=LINE+B" class="card-img-top" alt="Machine B">
+                <div class="card-body">
+                    <h5 class="card-title">สายการผลิต B</h5>
+                    <p class="card-text">
+                        ข้อมูลสรุปการทำงานของสายการผลิต B (เนื้อหายาวกว่ากล่องอื่นเพื่อทดสอบความสูง)
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">อัปเดต: 5 นาทีที่แล้ว</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="https://dummyimage.com/300x100/de350b/fff&text=LINE+C" class="card-img-top" alt="Machine C">
+                <div class="card-body">
+                    <h5 class="card-title">สายการผลิต C</h5>
+                    <p class="card-text">ข้อมูลสรุปการทำงานของสายการผลิต C</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">อัปเดต: 10 นาทีที่แล้ว</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-dark mb-3">4. กลุ่มการ์ดติดกัน (Card Group)</h4>
+    <div class="card-group mb-5 shadow-sm">
+        <div class="card border-success">
+            <div class="card-body">
+                <h5 class="card-title text-success">1. เครื่องล้างขวด</h5>
+                <p class="card-text">ทำงานปกติ ความเร็ว 500 ขวด/นาที</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">สถานะ: ปกติ</div>
+        </div>
+        <div class="card border-warning">
+            <div class="card-body">
+                <h5 class="card-title text-warning">2. เครื่องบรรจุ</h5>
+                <p class="card-text">กำลังปรับเทียบเซ็นเซอร์ระดับน้ำ</p>
+            </div>
+            <div class="card-footer bg-transparent border-warning">สถานะ: เฝ้าระวัง</div>
+        </div>
+        <div class="card border-primary">
+            <div class="card-body">
+                <h5 class="card-title text-primary">3. เครื่องปิดฝา</h5>
+                <p class="card-text">ทำงานปกติ รอรับขวดจากสถานีที่ 2</p>
+            </div>
+            <div class="card-footer bg-transparent border-primary">สถานะ: ปกติ</div>
+        </div>
+    </div>
+
+    <h4 class="text-dark mb-3">5. ตารางสรุปยอด 4 ช่อง (Card Grid 4 Cols)</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 mb-5">
+        <div class="col">
+            <div class="card h-100 text-bg-primary shadow-sm">
+                <div class="card-body text-center">
+                    <h6>ยอดผลิตสะสม</h6>
+                    <h2 class="mb-0">12,500</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-success shadow-sm">
+                <div class="card-body text-center">
+                    <h6>สินค้าผ่าน QC</h6>
+                    <h2 class="mb-0">12,480</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-danger shadow-sm">
+                <div class="card-body text-center">
+                    <h6>ของเสีย (Defect)</h6>
+                    <h2 class="mb-0">20</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 text-bg-dark shadow-sm">
+                <div class="card-body text-center">
+                    <h6>เวลาเดินเครื่อง</h6>
+                    <h2 class="mb-0">8 ชม.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-dark mb-3">6. ข้อความทับรูปภาพ (Image Overlay)</h4>
+    <div class="card text-bg-dark mb-5 shadow" style="max-width: 800px;">
+        <img src="https://img.freepik.com/premium-vector/conceptual-illustration-depicting-contemporary-factory-manufacturing-processes_1263357-35151.jpg?semt=ais_hybrid&w=740&q=80"
+            class="card-img" alt="ภาพโรงงาน">
+        <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center"
+            style="background-color: rgba(0,0,0,0.5);">
+            <h2 class="card-title text-warning fw-bold">⚠️ ประกาศด่วนด้านความปลอดภัย</h2>
+            <p class="card-text fs-5">สวมหมวกนิรภัยตลอดเวลาเมื่อเข้าพื้นที่โซน B</p>
+        </div>
+    </div>
+
+    <h4 class="text-dark mb-3">7. การ์ดแนวนอน (Horizontal Card)</h4>
+    <div class="card mb-5 shadow-sm" style="max-width: 600px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://cdn.pixabay.com/photo/2023/02/18/11/00/icon-7797704_640.png"
+                    class="img-fluid rounded-start" alt="รูปพนักงาน" style="height: 100%; object-fit: cover;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">ข้อมูลผู้ตรวจสอบคุณภาพ (QC)</h5>
+                    <p class="card-text"><strong>ชื่อ:</strong> นายสมบูรณ์ งานละเอียด</p>
+                    <p class="card-text">
+                        <strong>ประจำโซน:</strong> สายการผลิตน้ำดื่ม (Line B)
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">เข้างานล่าสุด: 07:45 น.</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
